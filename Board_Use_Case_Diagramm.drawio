@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-23T12:44:18.684Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="y9_cKkhLj01ufOY6A1hn" version="18.1.1" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2022-05-23T12:45:49.207Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="w3y7KtUt9bqo7eeiQzPm" version="18.1.1" type="github" pages="8">
   <diagram id="qUPmlaSDLw5E5s6Abh2X" name="UseCase">
     <mxGraphModel dx="1237" dy="1840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -75,7 +75,7 @@
           <mxGeometry x="1220" y="-990" width="40" height="80" as="geometry" />
         </mxCell>
         <mxCell id="3-MupCUPRcye6tlEEDHO-17" value="Menage account" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="330" y="-800" width="150" height="80" as="geometry" />
+          <mxGeometry x="350" y="-800" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="3-MupCUPRcye6tlEEDHO-18" value="Log out" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
           <mxGeometry x="1010" y="-920" width="150" height="80" as="geometry" />
@@ -176,16 +176,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="uRjbwsUOdH9eqwaA0u_4-1" value="Rename user" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="200" y="-670" width="150" height="80" as="geometry" />
+          <mxGeometry x="210" y="-670" width="150" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="uRjbwsUOdH9eqwaA0u_4-2" value="Change birthday" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="419" y="-580" width="150" height="80" as="geometry" />
+        <mxCell id="uRjbwsUOdH9eqwaA0u_4-2" value="Edit birthday" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="434" y="-580" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="uRjbwsUOdH9eqwaA0u_4-3" value="Change password" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
           <mxGeometry x="250" y="-580" width="150" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="uRjbwsUOdH9eqwaA0u_4-4" value="Change email" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="450" y="-670" width="150" height="80" as="geometry" />
+        <mxCell id="uRjbwsUOdH9eqwaA0u_4-4" value="Edit email" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="470" y="-670" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="uRjbwsUOdH9eqwaA0u_4-5" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;fontSize=7;fontColor=#000000;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="uRjbwsUOdH9eqwaA0u_4-1" target="3-MupCUPRcye6tlEEDHO-17" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
