@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-03T20:00:20.485Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="s_ejak10OmiGbaMx8b_P" version="18.2.1" type="github" pages="17">
+<mxfile host="app.diagrams.net" modified="2022-06-03T20:01:29.805Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="_iQTmSJcoZPi0hLeK7cW" version="18.2.1" type="github" pages="15">
   <diagram id="qUPmlaSDLw5E5s6Abh2X" name="UseCase">
     <mxGraphModel dx="1310" dy="1884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -3171,7 +3171,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="WBBRfYm99s1nLynaFcxy" name="Page-14">
+  <diagram id="WBBRfYm99s1nLynaFcxy" name="Sequence_workBoards">
     <mxGraphModel dx="1310" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -3179,23 +3179,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="tQyL-dBWTNQ6tP85Y65l" name="Page-15">
-    <mxGraphModel dx="1310" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="bzQszN8Nj42WURGwYILJ" name="Page-16">
-    <mxGraphModel dx="1310" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="gGcUFHTgmbT7E-agTFDb" name="Page-17">
+  <diagram id="tQyL-dBWTNQ6tP85Y65l" name="SequenseTaskManage">
     <mxGraphModel dx="1310" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
