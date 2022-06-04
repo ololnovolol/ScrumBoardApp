@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-04T10:47:51.458Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="lpl3OA2X1J-r7VCEEe5s" version="18.2.1" type="github" pages="16">
+<mxfile host="app.diagrams.net" modified="2022-06-04T10:54:24.843Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="qaJQZP8DGQr7RYCDoQYA" version="18.2.1" type="github" pages="16">
   <diagram id="qUPmlaSDLw5E5s6Abh2X" name="UseCase">
     <mxGraphModel dx="2062" dy="2257" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -3999,7 +3999,7 @@
           <mxGeometry y="138" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="k1fAKtedvMU10FGWahfA-3" value="Account" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="440" y="44" width="360" height="268" as="geometry" />
+          <mxGeometry x="440" y="44" width="360" height="294" as="geometry" />
         </mxCell>
         <mxCell id="k1fAKtedvMU10FGWahfA-4" value="+ User user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="26" width="360" height="26" as="geometry" />
@@ -4010,26 +4010,29 @@
         <mxCell id="k1fAKtedvMU10FGWahfA-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="78" width="360" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="k1fAKtedvMU10FGWahfA-7" value="+ AddAccount(User newUser):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+        <mxCell id="k1fAKtedvMU10FGWahfA-7" value="+ AddUser(User newUser):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="86" width="360" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="k1fAKtedvMU10FGWahfA-12" value="+ ChangeUser(User newUser):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+        <mxCell id="k1fAKtedvMU10FGWahfA-12" value="+ ChangeUser(User user, User newUser):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="112" width="360" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="k1fAKtedvMU10FGWahfA-16" value="+ RenameUser(User user, string name):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+        <mxCell id="k1fAKtedvMU10FGWahfA-16" value="+ RenameUser(User user, string newName):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="138" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="k1fAKtedvMU10FGWahfA-17" value="+ DeleteUser(User user):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="164" width="360" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="k1fAKtedvMU10FGWahfA-8" value="+ AddBoard(int id, Board newBoard):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+        <mxCell id="k1fAKtedvMU10FGWahfA-8" value="+ AddBoard(Board newBoard):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="190" width="360" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="k1fAKtedvMU10FGWahfA-9" value="+ Delete(User user): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+        <mxCell id="k1fAKtedvMU10FGWahfA-18" value="+ ChangeBoard(Board board, Board newBoard):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="216" width="360" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="k1fAKtedvMU10FGWahfA-10" value="+ Select(type): type  выбор пользователя чтоб под ним зайти" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+        <mxCell id="k1fAKtedvMU10FGWahfA-19" value="+ RenameBoard(Board board, string newBoardName):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="242" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-9" value="+ DeleteBoard(Board board): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="268" width="360" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
