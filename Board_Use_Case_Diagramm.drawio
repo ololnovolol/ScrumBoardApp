@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-04T10:11:58.813Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="c31COlwzVJKTyf6CsVA6" version="18.2.1" type="github" pages="16">
+<mxfile host="app.diagrams.net" modified="2022-06-04T10:47:51.458Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="lpl3OA2X1J-r7VCEEe5s" version="18.2.1" type="github" pages="16">
   <diagram id="qUPmlaSDLw5E5s6Abh2X" name="UseCase">
     <mxGraphModel dx="2062" dy="2257" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -1769,7 +1769,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="g-lDTPIUW0AR6CaCcpfs" name="ER">
-    <mxGraphModel dx="2062" dy="1088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1178" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1844,7 +1844,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cC26AOcxljzn9155J1Fj-23" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="50" y="1880" width="210" height="170" as="geometry" />
+          <mxGeometry x="40" y="1870" width="210" height="170" as="geometry" />
         </mxCell>
         <mxCell id="4bRWycWucRGnMEyFvitS-1" value="" style="group" parent="cC26AOcxljzn9155J1Fj-23" vertex="1" connectable="0">
           <mxGeometry width="210" height="170" as="geometry" />
@@ -3891,7 +3891,7 @@
           <mxGeometry y="424" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="UECWk36tZo0NMw9U1p6L-1" value="Column" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="880" width="360" height="320" as="geometry" />
+          <mxGeometry x="40" y="1050" width="360" height="320" as="geometry" />
         </mxCell>
         <mxCell id="UECWk36tZo0NMw9U1p6L-2" value="+ Id   : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="UECWk36tZo0NMw9U1p6L-1">
           <mxGeometry y="26" width="360" height="26" as="geometry" />
@@ -3930,7 +3930,7 @@
           <mxGeometry y="294" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="UECWk36tZo0NMw9U1p6L-5" value="Task" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1220" width="240" height="216" as="geometry" />
+          <mxGeometry x="40" y="1400" width="240" height="216" as="geometry" />
         </mxCell>
         <mxCell id="UECWk36tZo0NMw9U1p6L-6" value="+ Id: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="UECWk36tZo0NMw9U1p6L-5">
           <mxGeometry y="26" width="240" height="26" as="geometry" />
@@ -3957,7 +3957,7 @@
           <mxGeometry y="190" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="xIUcSVjtML0FTCd5-iSP-1" value="File" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="30" y="1440" width="240" height="164" as="geometry" />
+          <mxGeometry x="50" y="1660" width="240" height="164" as="geometry" />
         </mxCell>
         <mxCell id="xIUcSVjtML0FTCd5-iSP-2" value="+ Id: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="xIUcSVjtML0FTCd5-iSP-1">
           <mxGeometry y="26" width="240" height="26" as="geometry" />
@@ -3978,28 +3978,58 @@
           <mxGeometry y="138" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="GCi-Nd4XmyiRIeyRCXGl-16" value="ManageAccount" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="450" y="40" width="360" height="190" as="geometry" />
+          <mxGeometry x="870" y="40" width="360" height="164" as="geometry" />
         </mxCell>
-        <mxCell id="GCi-Nd4XmyiRIeyRCXGl-17" value="+ Users: List&lt;User&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
+        <mxCell id="GCi-Nd4XmyiRIeyRCXGl-17" value="+ Accounts: List&lt;Accounts&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
           <mxGeometry y="26" width="360" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="GCi-Nd4XmyiRIeyRCXGl-18" value="+ UserBoard: List&lt;ManageBoards&gt; пока безпонтовое поле" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
-          <mxGeometry y="52" width="360" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="GCi-Nd4XmyiRIeyRCXGl-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
-          <mxGeometry y="78" width="360" height="8" as="geometry" />
+          <mxGeometry y="52" width="360" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="GCi-Nd4XmyiRIeyRCXGl-20" value="+ GetAll():  Users" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
-          <mxGeometry y="86" width="360" height="26" as="geometry" />
+        <mxCell id="GCi-Nd4XmyiRIeyRCXGl-20" value="+ GetAll():  Accounts" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
+          <mxGeometry y="60" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="GCi-Nd4XmyiRIeyRCXGl-21" value="+ Search(string userName):  User" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
-          <mxGeometry y="112" width="360" height="26" as="geometry" />
+          <mxGeometry y="86" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="GCi-Nd4XmyiRIeyRCXGl-22" value="+ Delete(User user): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
-          <mxGeometry y="138" width="360" height="26" as="geometry" />
+          <mxGeometry y="112" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="GCi-Nd4XmyiRIeyRCXGl-25" value="+ Select(type): type  выбор пользователя чтоб под ним зайти" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="GCi-Nd4XmyiRIeyRCXGl-16">
+          <mxGeometry y="138" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-3" value="Account" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="440" y="44" width="360" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-4" value="+ User user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="26" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-5" value="+ Boards: List&lt;Board&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="52" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="78" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-7" value="+ AddAccount(User newUser):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="86" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-12" value="+ ChangeUser(User newUser):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="112" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-16" value="+ RenameUser(User user, string name):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="138" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-17" value="+ DeleteUser(User user):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
           <mxGeometry y="164" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-8" value="+ AddBoard(int id, Board newBoard):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="190" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-9" value="+ Delete(User user): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="216" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="k1fAKtedvMU10FGWahfA-10" value="+ Select(type): type  выбор пользователя чтоб под ним зайти" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="k1fAKtedvMU10FGWahfA-3">
+          <mxGeometry y="242" width="360" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
