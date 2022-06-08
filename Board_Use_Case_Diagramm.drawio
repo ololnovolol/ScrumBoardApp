@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-07T09:24:59.936Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="yaPfg0uctwCuO88m8bkQ" version="19.0.0" type="github" pages="17">
+<mxfile host="app.diagrams.net" modified="2022-06-08T11:45:09.383Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="MFsPhmGo3H2LZ_9nELAh" version="19.0.1" type="github" pages="17">
   <diagram id="qUPmlaSDLw5E5s6Abh2X" name="UseCase">
-    <mxGraphModel dx="1635" dy="2046" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1635" dy="1983" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4400,7 +4400,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="KezKwn4rz8BX_vuOk0rl" name="CLASS">
-    <mxGraphModel dx="1635" dy="877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1635" dy="814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -4432,7 +4432,7 @@
           <mxGeometry y="208" width="360" height="8" as="geometry" />
         </mxCell>
         <mxCell id="8jojOqlFOP_SabLUGATY-14" value="BoardDetails" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="1090" y="890" width="360" height="268" as="geometry" />
+          <mxGeometry x="1090" y="890" width="360" height="138" as="geometry" />
         </mxCell>
         <mxCell id="8jojOqlFOP_SabLUGATY-15" value="+ Columns: Dictionary&lt;Guid, Column&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
           <mxGeometry y="26" width="360" height="26" as="geometry" />
@@ -4446,23 +4446,8 @@
         <mxCell id="8jojOqlFOP_SabLUGATY-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontColor=#000000;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
           <mxGeometry y="104" width="360" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="8jojOqlFOP_SabLUGATY-17" value="+ Add(string name): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF9933;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
+        <mxCell id="8jojOqlFOP_SabLUGATY-22" value="+ GetAll(): Boards" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
           <mxGeometry y="112" width="360" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="8jojOqlFOP_SabLUGATY-18" value="+ ChangeBoard(int id, BoardModel newBoard):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF9933;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
-          <mxGeometry y="138" width="360" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="8jojOqlFOP_SabLUGATY-19" value="+ RenameBoard(int id , string newName):  void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF9933;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
-          <mxGeometry y="164" width="360" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="8jojOqlFOP_SabLUGATY-20" value="+ Search(string name): BoardModel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF9933;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
-          <mxGeometry y="190" width="360" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="8jojOqlFOP_SabLUGATY-21" value="+ DeleteBoard(string name): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF9933;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
-          <mxGeometry y="216" width="360" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="8jojOqlFOP_SabLUGATY-22" value="+ GetAll(): Boards" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF9933;" parent="8jojOqlFOP_SabLUGATY-14" vertex="1">
-          <mxGeometry y="242" width="360" height="26" as="geometry" />
         </mxCell>
         <mxCell id="8jojOqlFOP_SabLUGATY-23" value="Board" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#000000;" parent="1" vertex="1">
           <mxGeometry x="40" y="600" width="360" height="86" as="geometry" />
