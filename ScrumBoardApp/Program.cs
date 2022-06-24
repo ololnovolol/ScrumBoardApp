@@ -21,6 +21,7 @@ namespace ScrumBoardApp
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    Console.WriteLine();
                 });
     }
 }
