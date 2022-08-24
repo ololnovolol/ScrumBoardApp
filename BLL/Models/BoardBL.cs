@@ -5,6 +5,8 @@ namespace BLL.Models
 {
     public class BoardBL : BaseEntityBL
     {
+        public Guid UserId { get; set; } 
+
         public DateTime DateCreated { get; set; }
 
         public DateTime DateUpdated { get; set; }

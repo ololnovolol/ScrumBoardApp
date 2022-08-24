@@ -1,46 +1,52 @@
-﻿using DAL.Entities;
+﻿using DAL.EF;
+using DAL.Entities;
+using DAL.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace DAL.EntityRepositories
 {
-    internal class UserRepository
+    internal class UserRepository : IRepository<User>
     {
-        private List<User> users;
+        private ApplicationContext DB;
 
-        public UserRepository()
+        public UserRepository(ApplicationContext context)
         {
-            users = new List<User>();
+            DB = context;
         }
 
-        public UserRepository(User user)
+        public IEnumerable<User> ReadAll()
         {
-            users = new List<User>();
-            users.Add(user);
+            return DB.Users;
         }
 
-        public void Add()
+        public User Read(Guid Id)
         {
-
+            return DB.Users.Find(Id);
         }
 
-        public void Change()
+        public void Create(User item)
         {
-
+            DB.Users.Add(item);
         }
 
-        public void Delete()
+        public void Update(User item)
         {
+            var previous = DB.Users.Find(item.Id);
 
+            if (previous != null)
+            {
+                DB.Users.Remove(previous);
+
+                DB.Users.Add(item);
+            }
         }
 
-        public void Get()
+        public void Delete(Guid Id)
         {
-
-        }
-
-        public void GetAll()
-        {
-
+            User user = DB.Users.Find(Id);
+            if (user != null)
+                DB.Users.Remove(user);
         }
     }
 }

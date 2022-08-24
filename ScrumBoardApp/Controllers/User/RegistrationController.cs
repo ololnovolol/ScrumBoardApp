@@ -2,9 +2,7 @@
 using AutoMapper;
 using BLL.Models;
 using BLL.Services;
-using DAL.EF;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ScrumBoardApp.Models;
 
@@ -39,7 +37,7 @@ namespace ScrumBoardApp.Controllers.User
                 Role = "user",
             };
 
-            using (var db = new BllService(configuration))
+            using (var db = new BllUserService(configuration))
             {
                 db.AddUser(Mapper.Map<UserBL>(user));
             }

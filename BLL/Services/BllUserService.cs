@@ -3,17 +3,16 @@ using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using AutoMapper;
-using AutoMapper.Configuration;
 using BLL.Models;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace BLL.Services
 {
-    public class BllService : IDisposable
+    public class BllUserService : IDisposable
     {
         private UnitOfWork DB { get; }
 
-        public BllService(IConfiguration configuration)
+        public BllUserService(IConfiguration configuration)
         {
             DB = new UnitOfWork(configuration);
         }

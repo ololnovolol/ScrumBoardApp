@@ -1,46 +1,52 @@
-﻿using DAL.Entities;
+﻿using DAL.EF;
+using DAL.Entities;
+using DAL.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace DAL.EntityRepositories
 {
-    internal class ColumnRepository
+    internal class ColumnRepository : IRepository<Column>
     {
-        private List<Column> columns;
+        private ApplicationContext DB;
 
-        public ColumnRepository()
+        public ColumnRepository(ApplicationContext context)
         {
-            columns = new List<Column>();
+            DB = context;
         }
 
-        public ColumnRepository(Column column)
+        public IEnumerable<Column> ReadAll()
         {
-            columns = new List<Column>();
-            columns.Add(column);
+            return DB.Columns;
         }
 
-        public void Add()
+        public Column Read(Guid Id)
         {
-
+            return DB.Columns.Find(Id);
         }
 
-        public void Change()
+        public void Create(Column item)
         {
-
+            DB.Columns.Add(item);
         }
 
-        public void Delete()
+        public void Update(Column item)
         {
+            var previous = DB.Columns.Find(item.Id);
 
+            if (previous != null)
+            {
+                DB.Columns.Remove(previous);
+
+                DB.Columns.Add(item);
+            }
         }
 
-        public void Get()
+        public void Delete(Guid Id)
         {
-
-        }
-
-        public void GetAll()
-        {
-
+            Column column = DB.Columns.Find(Id);
+            if (column != null)
+                DB.Columns.Remove(column);
         }
     }
 }

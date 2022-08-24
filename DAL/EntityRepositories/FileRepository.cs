@@ -1,46 +1,53 @@
-﻿using DAL.Entities;
+﻿using DAL.EF;
+using DAL.Entities;
+using DAL.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace DAL.EntityRepositories
 {
-    internal class FileRepository
+    internal class FileRepository : IRepository<Attachment>
     {
-        private List<Attachment> files;
+        private ApplicationContext DB;
 
-        public FileRepository()
+        public FileRepository(ApplicationContext context)
         {
-            files = new List<Attachment>();
+            DB = context;
         }
 
-        public FileRepository(Attachment file)
+        public IEnumerable<Attachment> ReadAll()
         {
-            files = new List<Attachment>();
-            files.Add(file);
+            return DB.Attachments;
         }
 
-        public void Add()
+        public Attachment Read(Guid Id)
         {
-
+            return DB.Attachments.Find(Id);
         }
 
-        public void Change()
+        public void Create(Attachment item)
         {
-
+            DB.Attachments.Add(item);
         }
 
-        public void Delete()
+        public void Update(Attachment item)
         {
+            var previous = DB.Attachments.Find(item.Id);
 
+            if (previous != null)
+            {
+                DB.Attachments.Remove(previous);
+
+                DB.Attachments.Add(item);
+            }
         }
 
-        public void Get()
+        public void Delete(Guid Id)
         {
-
-        }
-
-        public void GetAll()
-        {
-
+            Attachment temp = DB.Attachments.Find(Id);
+            if (temp != null)
+                DB.Attachments.Remove(temp);
         }
     }
 }

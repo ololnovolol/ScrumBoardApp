@@ -1,46 +1,52 @@
-﻿using DAL.Entities;
+﻿using DAL.EF;
+using DAL.Entities;
+using DAL.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace DAL.EntityRepositories
 {
-    internal class TaskRepository
+    internal class TaskRepository : IRepository<Task>
     {
-        private List<Task> tasks;
+        private ApplicationContext DB;
 
-        public TaskRepository()
+        public TaskRepository(ApplicationContext context)
         {
-            tasks = new List<Task>();
+            DB = context;
         }
 
-        public TaskRepository(Task task)
+        public IEnumerable<Task> ReadAll()
         {
-            tasks = new List<Task>();
-            tasks.Add(task);
+            return DB.Tasks;
         }
 
-        public void Add()
+        public Task Read(Guid Id)
         {
-
+            return DB.Tasks.Find(Id);
         }
 
-        public void Change()
+        public void Create(Task item)
         {
-
+            DB.Tasks.Add(item);
         }
 
-        public void Delete()
+        public void Update(Task item)
         {
+            var previous = DB.Tasks.Find(item.Id);
 
+            if (previous != null)
+            {
+                DB.Tasks.Remove(previous);
+
+                DB.Tasks.Add(item);
+            }
         }
 
-        public void Get()
+        public void Delete(Guid Id)
         {
-
-        }
-
-        public void GetAll()
-        {
-
+            Task temp = DB.Tasks.Find(Id);
+            if (temp != null)
+                DB.Tasks.Remove(temp);
         }
     }
 }

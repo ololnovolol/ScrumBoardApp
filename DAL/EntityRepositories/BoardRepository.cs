@@ -1,44 +1,53 @@
-﻿using DAL.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Numerics;
+using DAL.EF;
+using DAL.Entities;
+using DAL.Interfaces;
 
 namespace DAL.EntityRepositories
 {
-    internal class BoardRepository
+    internal class BoardRepository : IRepository<Board>
     {
-        private Board board;
+        private ApplicationContext DB;
 
-        public BoardRepository()
+        public BoardRepository(ApplicationContext context)
         {
-            board = new Board();
+            DB = context;
         }
 
-        public BoardRepository(Board board)
+        public IEnumerable<Board> ReadAll()
         {
-            this.board = board;
+            return DB.Boards;
         }
 
-        public void Add()
+        public Board Read(Guid Id)
         {
-
+            return DB.Boards.Find(Id);
         }
 
-        public void Change()
+        public void Create(Board item)
         {
-
+            DB.Boards.Add(item);
         }
 
-        public void Delete()
+        public void Update(Board item)
         {
+            var previousBoard = DB.Boards.Find(item.Id);
 
+            if (previousBoard != null & previousBoard.Id == item.UserId)
+            {
+                DB.Boards.Remove(previousBoard);
+
+                DB.Boards.Add(item);
+            }
         }
 
-        public void Get()
+        public void Delete(Guid Id)
         {
-
-        }
-
-        public void GetAll()
-        {
-
+            Board board = DB.Boards.Find(Id);
+            if (board != null)
+                DB.Boards.Remove(board);
         }
     }
 }
