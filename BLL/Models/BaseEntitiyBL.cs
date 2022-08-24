@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace DAL.Entities
+namespace BLL.Models
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntityBL
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DAL.Entities
+namespace ScrumBoardApp.Models
 {
-    public class Board : BaseEntity
+    public class BoardModel : BaseEntityModel
     {
         public DateTime DateCreated { get; set; }
 
         public DateTime DateUpdated { get; set; }
 
-        public ICollection<Column> BoardColumns { get; set; }
+        public ICollection<ColumnModel> BoardColumns { get; set; }
 
     }
 }

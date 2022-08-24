@@ -5,16 +5,16 @@ namespace DAL.EntityRepositories
 {
     internal class FileRepository
     {
-        private List<File> files;
+        private List<Attachment> files;
 
         public FileRepository()
         {
-            files = new List<File>();
+            files = new List<Attachment>();
         }
 
-        public FileRepository(File file)
+        public FileRepository(Attachment file)
         {
-            files = new List<File>();
+            files = new List<Attachment>();
             files.Add(file);
         }
 

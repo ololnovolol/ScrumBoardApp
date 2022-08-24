@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DAL.Entities
+namespace BLL.Models
 {
-    public class Task : BaseEntity
+    public class TaskBL : BaseEntityBL
     {
         public string Description { get; set; }
 
@@ -11,6 +11,6 @@ namespace DAL.Entities
 
         public DateTime ExpirationDate { get; set; }
 
-        public ICollection<Attachment> AttachmentsTask { get; set; }
+        public ICollection<AttachmentBL> AttachmentsTask { get; set; }
     }
 }

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DAL.Entities
 {
-    internal class Column : BaseEntitiy
+    public class Column : BaseEntity
     {
-
+        public ICollection<Task> ColumnTasks { get; set; }
     }
 }
