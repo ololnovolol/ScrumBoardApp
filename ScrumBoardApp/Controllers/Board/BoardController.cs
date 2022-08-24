@@ -6,7 +6,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
-namespace ScrumBoardApp.Controllers
+namespace ScrumBoardApp.Controllers.Board
 {
     public class BoardController : Controller
     {

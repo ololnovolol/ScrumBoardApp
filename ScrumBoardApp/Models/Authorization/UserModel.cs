@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 using DAL.Entities;
 
-namespace ScrumBoardApp.Models
+namespace ScrumBoardApp.Models.Authorization
 {
     public class UserModel : BaseEntityModel
     {

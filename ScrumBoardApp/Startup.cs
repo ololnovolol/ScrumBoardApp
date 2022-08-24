@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScrumBoardApp.Models;
+using ScrumBoardApp.Models.Authorization;
 
 namespace ScrumBoardApp
 {
