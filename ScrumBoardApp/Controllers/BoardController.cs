@@ -6,16 +6,10 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
-namespace ScrumBoardApp.Controllers.User
+namespace ScrumBoardApp.Controllers
 {
     public class BoardController : Controller
     {
-        private IConfiguration configuration { get; }
-
-        public BoardController(IConfiguration configuration)
-        {
-            this.configuration = configuration;
-        }
 
         // GET: RegistrationController
         [HttpGet]
@@ -35,7 +29,7 @@ namespace ScrumBoardApp.Controllers.User
                 DateUpdated = DateTime.Now
             };
 
-            using (var db = new BllBoardService(configuration))
+            using (var db = new BllBoardService())
             {
                 db.AddBoard(Mapper.Map<BoardBL>(board));
             }

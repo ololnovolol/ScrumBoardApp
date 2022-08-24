@@ -10,13 +10,6 @@ namespace ScrumBoardApp.Controllers.User
 {
     public class RegistrationController : Controller
     {
-        private IConfiguration configuration;
-
-
-        public RegistrationController(IConfiguration configuration)
-        {
-            this.configuration = configuration;
-        }
 
         // GET: RegistrationController
         [HttpGet]
@@ -37,7 +30,7 @@ namespace ScrumBoardApp.Controllers.User
                 Role = "user",
             };
 
-            using (var db = new BllUserService(configuration))
+            using (var db = new BllUserService())
             {
                 db.AddUser(Mapper.Map<UserBL>(user));
             }

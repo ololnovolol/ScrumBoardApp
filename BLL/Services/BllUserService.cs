@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using AutoMapper;
 using BLL.Models;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace BLL.Services
 {
@@ -12,9 +11,9 @@ namespace BLL.Services
     {
         private UnitOfWork DB { get; }
 
-        public BllUserService(IConfiguration configuration)
+        public BllUserService()
         {
-            DB = new UnitOfWork(configuration);
+            DB = new UnitOfWork();
         }
 
 

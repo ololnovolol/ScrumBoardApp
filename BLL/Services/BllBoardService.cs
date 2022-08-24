@@ -4,7 +4,6 @@ using DAL.Entities;
 using DAL;
 using System;
 using System.Collections.Generic;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace BLL.Services
 {
@@ -12,9 +11,9 @@ namespace BLL.Services
     {
         private UnitOfWork DB { get; }
 
-        public BllBoardService(IConfiguration configuration)
+        public BllBoardService()
         {
-            DB = new UnitOfWork(configuration);
+            DB = new UnitOfWork();
         }
 
 

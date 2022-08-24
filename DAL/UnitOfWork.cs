@@ -16,9 +16,9 @@ namespace DAL
         private TaskRepository TaskRepo;
         private UserRepository UserRepo;
 
-        public UnitOfWork(IConfiguration configuration)
+        public UnitOfWork()
         {
-            DataBase = new ApplicationContext(configuration);
+            DataBase = new ApplicationContext();
         }
 
         public IRepository<Board> Boards

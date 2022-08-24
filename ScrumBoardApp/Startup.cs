@@ -1,11 +1,15 @@
 using AutoMapper;
+using BLL.Models;
 using DAL.EF;
+using DAL.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ScrumBoardApp.Models;
 
 namespace ScrumBoardApp
 {
@@ -32,6 +36,10 @@ namespace ScrumBoardApp
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationContext>();
+
         }
 
 
@@ -50,13 +58,11 @@ namespace ScrumBoardApp
             }
 
             app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles();
             app.UseDefaultFiles();
 
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -69,7 +75,11 @@ namespace ScrumBoardApp
                 endpoints.MapFallbackToFile("/index.html");
             });
 
-            Mapper.Initialize(cfg => { });
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<UserModel, UserBL>(MemberList.None);
+                cfg.CreateMap<UserBL, User>(MemberList.None);
+            });
         }
     }
 }

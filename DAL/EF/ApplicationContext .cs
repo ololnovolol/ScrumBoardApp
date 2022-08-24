@@ -1,14 +1,16 @@
 ﻿using DAL.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace DAL.EF
 {
-    public class ApplicationContext : DbContext
-    {
-        private IConfiguration configuration;
+    public class ApplicationContext : IdentityDbContext<User>
 
-        public DbSet<User> Users { get; set; }
+    {
+        public readonly IConfiguration Configuration;
+
+        //public DbSet<User> Users { get; set; }
 
         public DbSet<Board> Boards { get; set; }
 
@@ -18,15 +20,21 @@ namespace DAL.EF
 
         public DbSet<Attachment> Attachments { get; set; }
 
+        public ApplicationContext()
+        {
+
+        }
+
         public ApplicationContext(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            Configuration = configuration;
             //Database.EnsureCreated();
         }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //string connectionString = configuration.GetConnectionString("DefaultConnection");
+            //string connectionString = Configuration.GetConnectionString("DefaultConnection");
             string connectionString = "Server=(localdb)\\mssqllocaldb; Database=ScrumBoard;Trusted_Connection=True";
             optionsBuilder.UseSqlServer(connectionString);
         }
