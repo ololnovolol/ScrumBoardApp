@@ -61,7 +61,7 @@ namespace ScrumBoardApp.Controllers.User
                 {
                     // install cookies
                     await _signInManager.SignInAsync(user, false);
-                    return RedirectToAction("Index", "Home");
+                    return Redirect("~/Home/Success");
                 }
                 else
                 {
