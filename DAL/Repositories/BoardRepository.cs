@@ -45,6 +45,7 @@ namespace DAL.Repositories
 
             if (board != null)
             {
+                item.DateCreated = board.DateCreated;
                 Db.Boards.Remove(board);
 
             }

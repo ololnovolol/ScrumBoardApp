@@ -14,11 +14,6 @@ namespace ScrumBoardApp.Models
 
         public ICollection<ColumnModel> BoardColumns { get; set; }
 
-        public BoardModel()
-        {
-            Id = Guid.NewGuid();
-            BoardColumns = new List<ColumnModel>();
-        }
 
     }
 }

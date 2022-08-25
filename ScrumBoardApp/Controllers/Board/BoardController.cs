@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using ScrumBoardApp.Models;
 using ScrumBoardApp.Models.Column;
 using DAL.Entities;
+using System.Xml.Linq;
 
 namespace ScrumBoardApp.Controllers.Board
 {
@@ -63,9 +64,21 @@ namespace ScrumBoardApp.Controllers.Board
         [Authorize]
         public IActionResult Update()
         {
+            return View();
+        }
 
+        [HttpPost]
+        [Authorize]
+        public IActionResult Update(BoardModel update)
+        {
 
-            return Index();
+            update.DateUpdated = DateTime.Now;
+            update.UserId = Guid.Parse(_currentUser.GetUserId(User));
+
+            using (var db = new BllBoardService())
+                db.UpdateBoard(Mapper.Map<BoardBL>(update));
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -93,6 +106,7 @@ namespace ScrumBoardApp.Controllers.Board
 
             BoardModel board = new BoardModel()
             {
+                Id = Guid.NewGuid(),
                 Name = name,
                 UserId = Guid.Parse(_currentUser.GetUserId(User)), // Get user id:
                 DateCreated = DateTime.Now,
