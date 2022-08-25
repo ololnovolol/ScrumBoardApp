@@ -3,6 +3,7 @@ using BLL.Models;
 using BLL.Services;
 using ScrumBoardApp.Models;
 using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -13,12 +14,14 @@ namespace ScrumBoardApp.Controllers.Board
 
         // GET: RegistrationController
         [HttpGet]
+        [Authorize]
         public ActionResult AddBoard()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult AddBoard(string name, Guid userId)
         {
             BoardModel board = new BoardModel()
