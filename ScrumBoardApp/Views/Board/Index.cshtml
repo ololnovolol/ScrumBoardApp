@@ -16,21 +16,22 @@
         </tr>
         </thead>
 
-    @foreach (var item in Model)
-    {
-                <tbody>
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.DateCreated</td>
-                    <td>@item.DateUpdated</td>
-                    <td>
-                        <a asp-action="Details" asp-controller="Board" class="btn btn-outline-primary" tabindex="-1" role="button" aria-disabled="true">Select</a>
-                        <a asp-action="Update" asp-controller="Board" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Update</a>
-                        <a asp-action="Delete" asp-controller="Board" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a>
-                    </td>
-                </tr>
-                </tbody>
-    }
+        @foreach (var item in Model)
+        {
+                    <tbody>
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.DateCreated</td>
+                        <td>@item.DateUpdated</td>
+                        <td>
+                            <a asp-action="Details" asp-controller="Board" class="btn btn-outline-primary" tabindex="-1" role="button" aria-disabled="true">Select</a>
+                            <a asp-action="Update" asp-controller="Board" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Update</a>
+                            <a asp-action="Delete" asp-controller="Board" asp-route-id="@item.Id" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+        }
+        <tr?><td><a asp-action="AddBoard" asp-controller="Board"  class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">Add</a></td></tr>
     </table>
 
 

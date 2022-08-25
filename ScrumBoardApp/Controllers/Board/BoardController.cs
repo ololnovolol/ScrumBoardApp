@@ -16,12 +16,13 @@ namespace ScrumBoardApp.Controllers.Board
 {
     public class BoardController : Controller
     {
+
         private UserManager<DAL.Entities.User> _currentUser;
+
         public BoardController(UserManager<DAL.Entities.User> userManager)
         {
             _currentUser = userManager;
         }
-
 
         [HttpGet]
         [Authorize]
@@ -33,20 +34,40 @@ namespace ScrumBoardApp.Controllers.Board
             List<BoardModel> list = default;
 
             using (var db = new BllBoardService())
-                list = Mapper.Map<List<BoardModel>>(db.GetBoards().Where(b => b.UserId.Equals(id)));
+                list = Mapper.Map<List<BoardModel>>(db.GetBoards().Where(b => b.UserId.Equals(id))).OrderBy(x=>x.Name).ToList();
 
             return View(list);
         }
 
+        [HttpGet]
+        [Authorize]
+        public IActionResult Delete(Guid Id)
+        {
+            //Guid id = Guid.Parse(Id);
+            using (var db = new BllBoardService())
+                db.RemoveBoard(Id);
 
-        public IActionResult Delete()
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult Details()
         {
 
 
             return Index();
         }
 
-        // GET: RegistrationController
+        [HttpGet]
+        [Authorize]
+        public IActionResult Update()
+        {
+
+
+            return Index();
+        }
+
         [HttpGet]
         [Authorize]
         public ActionResult AddBoard()
@@ -83,7 +104,7 @@ namespace ScrumBoardApp.Controllers.Board
                 db.AddBoard(Mapper.Map<BoardBL>(board));
             }
 
-            return Redirect("~/Home/Success");
+            return RedirectToAction("Index");
         }
     }
 }
