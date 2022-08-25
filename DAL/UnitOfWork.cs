@@ -2,8 +2,7 @@
 using DAL.Entities;
 using DAL.Interfaces;
 using DAL.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 
 namespace DAL
 {
@@ -28,6 +27,7 @@ namespace DAL
                 if (BoardRepo == null)
                     BoardRepo = new BoardRepository(DataBase);
                 return BoardRepo;
+
             }
         }
 
@@ -51,7 +51,7 @@ namespace DAL
             }
         }
 
-        IRepository<Entities.Attachment> IUnitOfWork.Attachments
+        IRepository<Attachment> IUnitOfWork.Attachments
         {
             get
             {
@@ -61,13 +61,14 @@ namespace DAL
             }
         }
 
-        IRepository<Entities.Task> IUnitOfWork.Tasks
+        IRepository<Taska> IUnitOfWork.Tasks
         {
             get
             {
                 if (TaskRepo == null)
                     TaskRepo = new TaskRepository(DataBase);
                 return TaskRepo;
+
             }
         }
 

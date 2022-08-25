@@ -1,15 +1,15 @@
-﻿@model BoardModel
+﻿@model ScrumBoardApp.Models.Column.ColumnModel
 @{
-    ViewData["Title"] = "AddBoard";
+    ViewData["Title"] = "AddColumn";
 }
 
 <link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
 
 <div class="row justify-content-center align-items-center" >
     <div class="col-md-4">
-        <h4>AddBoard</h4>
-        <form asp-action="AddBoard" asp-controller="Board">
-            
+        <h4>AddColumn</h4>
+        <form asp-action="AddColumn" asp-controller="Column">
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label">Input Name</label>
                 <input asp-for="Name" class="form-control"/>

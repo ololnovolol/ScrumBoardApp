@@ -17,15 +17,16 @@ namespace BLL.Services
         }
 
 
-        public void AddUser(UserBL element)
+        public bool AddUser(UserBL element)
         {
             DB.Users.Create(item: Mapper.Map<User>(element));
             DB.Save();
+            return true;
         }
 
         public void UpdateUser(UserBL element)
         {
-            User toUpdate = DB.Users.Read(element.Id);
+            var toUpdate = DB.Users.Read(Id: element.Id).Result;
 
             if (toUpdate != null)
             {

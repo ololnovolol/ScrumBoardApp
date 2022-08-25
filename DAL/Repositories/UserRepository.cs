@@ -1,8 +1,10 @@
 ﻿using DAL.EF;
 using DAL.Entities;
 using DAL.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -17,19 +19,19 @@ namespace DAL.Repositories
 
         void IRepository<User>.Create(User item)
         {
-            Db.Users.Add(item);
+            Db.Users.AddAsync(item);
         }
 
         void IRepository<User>.Delete(Guid Id)
         {
-            var user = Db.Users.Find(Id);
-            if (user != null)
-                Db.Users.Remove(user);
+            var user = Db.Users.FindAsync(Id);
+            if (user.Result != null)
+                Db.Users.Remove(user.Result);
         }
 
-        User IRepository<User>.Read(Guid Id)
+        ValueTask<User> IRepository<User>.Read(Guid Id)
         {
-            return Db.Users.Find(Id);
+            return Db.Users.FindAsync(Id);
         }
 
         IEnumerable<User> IRepository<User>.ReadAll()
@@ -37,9 +39,9 @@ namespace DAL.Repositories
             return Db.Users;
         }
 
-        void IRepository<User>.Update(User item)
+        async Task IRepository<User>.Update(User item)
         {
-            var user = Db.Users.Find(item.Id);
+            var user = await Db.Users.FindAsync(item.Id);
 
             if (user != null)
             {
@@ -47,7 +49,7 @@ namespace DAL.Repositories
 
             }
 
-            Db.Users.Add(item);
+            await Db.Users.AddAsync(item);
         }
     }
 }

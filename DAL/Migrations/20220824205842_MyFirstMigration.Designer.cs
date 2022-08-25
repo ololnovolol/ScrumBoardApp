@@ -99,7 +99,7 @@ namespace DAL.Migrations
                     b.ToTable("Columns");
                 });
 
-            modelBuilder.Entity("DAL.Entities.Task", b =>
+            modelBuilder.Entity("DAL.Entities.Taska", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -337,7 +337,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Entities.Attachment", b =>
                 {
-                    b.HasOne("DAL.Entities.Task", null)
+                    b.HasOne("DAL.Entities.Taska", null)
                         .WithMany("AttachmentsTask")
                         .HasForeignKey("TaskId");
                 });
@@ -356,7 +356,7 @@ namespace DAL.Migrations
                         .HasForeignKey("BoardId");
                 });
 
-            modelBuilder.Entity("DAL.Entities.Task", b =>
+            modelBuilder.Entity("DAL.Entities.Taska", b =>
                 {
                     b.HasOne("DAL.Entities.Column", null)
                         .WithMany("ColumnTasks")
@@ -424,7 +424,7 @@ namespace DAL.Migrations
                     b.Navigation("ColumnTasks");
                 });
 
-            modelBuilder.Entity("DAL.Entities.Task", b =>
+            modelBuilder.Entity("DAL.Entities.Taska", b =>
                 {
                     b.Navigation("AttachmentsTask");
                 });

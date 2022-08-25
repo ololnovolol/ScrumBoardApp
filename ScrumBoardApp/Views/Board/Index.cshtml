@@ -1,0 +1,49 @@
+﻿@model List<ScrumBoardApp.Models.BoardModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>List of my boards: </h2>
+    <table class="table">
+
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Date created</th>
+            <th scope="col">Date last updated</th>
+            <th scope="col">...</th>
+        </tr>
+        </thead>
+
+    @foreach (var item in Model)
+    {
+                <tbody>
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.DateCreated</td>
+                    <td>@item.DateUpdated</td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Board" class="btn btn-outline-primary" tabindex="-1" role="button" aria-disabled="true">Select</a>
+                        <a asp-action="Update" asp-controller="Board" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Update</a>
+                        <a asp-action="Delete" asp-controller="Board" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+    }
+    </table>
+
+
+@if (Model.Count != 0)
+{
+            <h2>
+                Total Position: @Model.Count
+            </h2>
+}
+else
+{
+            <div class="alert alert-warning" role="alert">
+                Ups...Boards not found...List board is empty :( 
+                    <a asp-area="" asp-controller="Board" asp-action="AddBoard" class="alert-link">Create first board.</a>
+            </div>
+}

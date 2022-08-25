@@ -25,12 +25,9 @@
                     @*   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>*@
                     <a class="nav-link text-danger" asp-area="" asp-controller="HOME" asp-action="Index"> ScrumBoard </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Board" asp-action="AddBoard"> CreateBoard </a>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">ManageBoards</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Board" asp-action="Index">ManageBoards</a>
                 </li>
 
                 <li class="nav-item">
@@ -40,11 +37,12 @@
                 <li class="nav-item dropdown">
                     <div class="dropdown show">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            MyBoards
+                            Funks
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" asp-action="" asp-controller="Home" asp-route-product="pc">Data</a>
-                            <a class="dropdown-item" asp-action="" asp-controller="Home" asp-route-product="pc">LessonPdf</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Board" asp-action="AddBoard"> CreateBoard </a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Column" asp-action="AddColumn"> CreateColumn </a>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
                         </div>

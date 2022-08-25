@@ -1,12 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using BLL.Models;
 using BLL.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using ScrumBoardApp.Models;
 using ScrumBoardApp.Models.Authorization;
 
 namespace ScrumBoardApp.Controllers.User
@@ -54,9 +51,11 @@ namespace ScrumBoardApp.Controllers.User
         {
             if (ModelState.IsValid)
             {
+
                 DAL.Entities.User user = new DAL.Entities.User { Email = model.Email, UserName = model.Email, BirthDay = model.BirthDay };
                 // Add Acc
                 var result = await _userManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
                     // install cookies
@@ -71,6 +70,7 @@ namespace ScrumBoardApp.Controllers.User
                     }
                 }
             }
+
             return View(model);
         }
 

@@ -1,4 +1,4 @@
-﻿namespace ScrumBoardApp.Models
+﻿namespace ScrumBoardApp.Models.Attachment
 {
     public class AttachmentModel : BaseEntityModel
     {

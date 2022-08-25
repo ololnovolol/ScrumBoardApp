@@ -8,7 +8,7 @@ namespace DAL.Interfaces
         IRepository<Attachment> Attachments { get; }
         IRepository<Board> Boards { get; }
         IRepository<Column> Columns { get; }
-        IRepository<Task> Tasks { get; }
+        IRepository<Taska> Tasks { get; }
         IRepository<User> Users { get; }
         void Save();
     }

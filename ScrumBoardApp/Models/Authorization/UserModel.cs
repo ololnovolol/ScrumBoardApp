@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using DAL.Entities;
+using ScrumBoardApp.Models;
 
 namespace ScrumBoardApp.Models.Authorization
 {
@@ -28,11 +29,11 @@ namespace ScrumBoardApp.Models.Authorization
 
         public string Role { get; set; }
 
-        public ICollection<Board> UserBoards { get; set; }
+        public ICollection<BoardModel> UserBoards { get; set; }
 
         public UserModel()
         {
-            UserBoards = new List<Board>();
+            UserBoards = new List<BoardModel>();
             Id = Guid.NewGuid();
         }
 

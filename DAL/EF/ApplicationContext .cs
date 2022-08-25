@@ -16,7 +16,7 @@ namespace DAL.EF
 
         public DbSet<Column> Columns { get; set; }
 
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<Taska> Tasks { get; set; }
 
         public DbSet<Attachment> Attachments { get; set; }
 

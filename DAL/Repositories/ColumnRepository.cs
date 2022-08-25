@@ -3,6 +3,9 @@ using DAL.Entities;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading.Tasks.Sources;
+using Task = System.Threading.Tasks.Task;
 
 namespace DAL.Repositories
 {
@@ -16,20 +19,20 @@ namespace DAL.Repositories
         }
 
         void IRepository<Column>.Create(Column item)
-        {
-            Db.Columns.Add(item);
+        { 
+            Db.Columns.AddAsync(item);
         }
 
         void IRepository<Column>.Delete(Guid Id)
         {
-            var column = Db.Columns.Find(Id);
-            if (column != null)
-                Db.Columns.Remove(column);
+            var column = Db.Columns.FindAsync(Id);
+            if (column.Result != null)
+                Db.Columns.Remove(column.Result);
         }
 
-        Column IRepository<Column>.Read(Guid Id)
+        ValueTask<Column> IRepository<Column>.Read(Guid Id)
         {
-            return Db.Columns.Find(Id);
+            return Db.Columns.FindAsync(Id);
         }
 
         IEnumerable<Column> IRepository<Column>.ReadAll()
@@ -37,9 +40,9 @@ namespace DAL.Repositories
             return Db.Columns;
         }
 
-        void IRepository<Column>.Update(Column item)
+        async Task IRepository<Column>.Update(Column item)
         {
-            var column = Db.Columns.Find(item.Id);
+            var column = await Db.Columns.FindAsync(item.Id);
 
             if (column != null)
             {
@@ -47,7 +50,7 @@ namespace DAL.Repositories
 
             }
 
-            Db.Columns.Add(item);
+            await Db.Columns.AddAsync(item);
         }
     }
 }

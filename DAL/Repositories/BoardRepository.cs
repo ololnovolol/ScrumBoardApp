@@ -3,6 +3,8 @@ using DAL.Entities;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Task = System.Threading.Tasks.Task;
 
 namespace DAL.Repositories
 {
@@ -17,19 +19,19 @@ namespace DAL.Repositories
 
         void IRepository<Board>.Create(Board item)
         {
-            Db.Boards.Add(item);
+            Db.AddAsync(item);
         }
 
         void IRepository<Board>.Delete(Guid Id)
         {
-            Board board = Db.Boards.Find(Id);
-            if (board != null)
-                Db.Boards.Remove(board);
+            var board = Db.Boards.FindAsync(Id);
+            if (board.Result != null)
+                Db.Boards.Remove(board.Result);
         }
 
-        Board IRepository<Board>.Read(Guid Id)
+        ValueTask<Board> IRepository<Board>.Read(Guid Id)
         {
-            return Db.Boards.Find(Id);
+            return Db.Boards.FindAsync(Id);
         }
 
         IEnumerable<Board> IRepository<Board>.ReadAll()
@@ -37,9 +39,9 @@ namespace DAL.Repositories
             return Db.Boards;
         }
 
-        void IRepository<Board>.Update(Board item)
+        async Task IRepository<Board>.Update(Board item)
         {
-            var board = Db.Boards.Find(item.Id);
+            var board = await Db.Boards.FindAsync(item.Id);
 
             if (board != null)
             {
@@ -47,7 +49,7 @@ namespace DAL.Repositories
 
             }
 
-            Db.Boards.Add(item);
+            await Db.Boards.AddAsync(item);
         }
     }
 }

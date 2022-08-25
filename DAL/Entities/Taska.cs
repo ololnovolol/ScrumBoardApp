@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ScrumBoardApp.Models
+namespace DAL.Entities
 {
-    public class TaskModel : BaseEntityModel
+    public class Taska : BaseEntity
     {
         public string Description { get; set; }
 
@@ -11,6 +11,6 @@ namespace ScrumBoardApp.Models
 
         public DateTime ExpirationDate { get; set; }
 
-        public ICollection<AttachmentModel> AttachmentsTask { get; set; }
+        public ICollection<Attachment> AttachmentsTask { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
@@ -8,11 +9,11 @@ namespace DAL.Interfaces
     {
         IEnumerable<T> ReadAll();
 
-        T Read(Guid Id);
+        ValueTask<T> Read(Guid Id);
 
         void Create(T item);
 
-        void Update(T item);
+        Task Update(T item);
 
         void Delete(Guid Id);
 

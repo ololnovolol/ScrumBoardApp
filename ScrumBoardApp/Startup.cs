@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScrumBoardApp.Models;
 using ScrumBoardApp.Models.Authorization;
+using ScrumBoardApp.Models.Column;
 
 namespace ScrumBoardApp
 {
@@ -80,6 +81,10 @@ namespace ScrumBoardApp
             {
                 cfg.CreateMap<UserModel, UserBL>(MemberList.None);
                 cfg.CreateMap<UserBL, User>(MemberList.None);
+                cfg.CreateMap<BoardModel, BoardBL>(MemberList.None);
+                cfg.CreateMap<BoardBL, Board>(MemberList.None);
+                cfg.CreateMap<ColumnModel, ColumnBL>(MemberList.None);
+                cfg.CreateMap<ColumnBL, Column>(MemberList.None);
             });
         }
     }

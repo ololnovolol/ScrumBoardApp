@@ -1,12 +1,13 @@
 ﻿using DAL.EF;
-using DAL.Entities;
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DAL.Entities;
 
 namespace DAL.Repositories
 {
-    public class TaskRepository : IRepository<Task>
+    public class TaskRepository : IRepository<Taska>
     {
         private ApplicationContext Db;
 
@@ -15,31 +16,31 @@ namespace DAL.Repositories
             Db = context;
         }
 
-        void IRepository<Task>.Create(Task item)
+        void IRepository<Taska>.Create(Taska item)
         {
-            Db.Tasks.Add(item);
+            Db.Tasks.AddAsync(item);
         }
 
-        void IRepository<Task>.Delete(Guid Id)
+        void IRepository<Taska>.Delete(Guid Id)
         {
-            var taska = Db.Tasks.Find(Id);
-            if (taska != null)
-                Db.Tasks.Remove(taska);
+            var taska = Db.Tasks.FindAsync(Id);
+            if (taska.Result != null)
+                Db.Tasks.Remove(taska.Result);
         }
 
-        Task IRepository<Task>.Read(Guid Id)
+        ValueTask<Taska> IRepository<Taska>.Read(Guid Id)
         {
-            return Db.Tasks.Find(Id);
+            return Db.Tasks.FindAsync(Id);
         }
 
-        IEnumerable<Task> IRepository<Task>.ReadAll()
+        IEnumerable<Taska> IRepository<Taska>.ReadAll()
         {
             return Db.Tasks;
         }
 
-        void IRepository<Task>.Update(Task item)
+        async Task IRepository<Taska>.Update(Taska item)
         {
-            var taska = Db.Tasks.Find(item.Id);
+            var taska = await Db.Tasks.FindAsync(item.Id);
 
             if (taska != null)
             {
@@ -47,7 +48,7 @@ namespace DAL.Repositories
 
             }
 
-            Db.Tasks.Add(item);
+            await Db.Tasks.AddAsync(item);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace BLL.Services
 
         public void UpdateBoard(BoardBL element)
         {
-            Board toUpdate = DB.Boards.Read(element.Id);
+            var toUpdate = DB.Boards.Read(element.Id).Result;
 
             if (toUpdate != null)
             {
