@@ -7,10 +7,5 @@ namespace ScrumBoardApp.Models.Column
     {
         public ICollection<TaskModel> ColumnTasks { get; set; }
 
-        public ColumnModel()
-        {
-            Id = Guid.NewGuid();
-            ColumnTasks = new List<TaskModel>();
-        }
     }
 }

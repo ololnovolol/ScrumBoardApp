@@ -8,19 +8,63 @@ using ScrumBoardApp.Models;
 using System;
 using System.Collections.Generic;
 using ScrumBoardApp.Models.Column;
+using System.Linq;
 
 namespace ScrumBoardApp.Controllers.Column
 {
     public class ColumnController : Controller
     {
-        private readonly UserManager<DAL.Entities.User> _currentUser;
 
-        public ColumnController(UserManager<DAL.Entities.User> userManager)
+        [HttpGet]
+        [Authorize]
+        public IActionResult Index()
         {
-            _currentUser = userManager;
+
+            List<ColumnModel> list = default;
+
+            using (var db = new BllColumnService())
+                list = Mapper.Map<List<ColumnModel>>(db.GetColumns());
+
+            return View(list);
         }
 
-        // GET: RegistrationController
+        [HttpGet]
+        [Authorize]
+        public IActionResult Delete(Guid Id)
+        {
+            //Guid id = Guid.Parse(Id);
+            using (var db = new BllColumnService())
+                db.RemoveColumn(Id);
+
+            return RedirectToAction("Index", "Column");
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult Details()
+        {
+            // TODO realize
+            return RedirectToAction("Index", "Column");
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult Update()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Update(ColumnModel update)
+        {
+
+            using (var db = new BllColumnService())
+                db.UpdateColumn(Mapper.Map<ColumnBL>(update));
+
+            return RedirectToAction("Index", "Column");
+        }
+
         [HttpGet]
         [Authorize]
         public ActionResult AddColumn()
@@ -35,6 +79,7 @@ namespace ScrumBoardApp.Controllers.Column
 
             ColumnModel column = new ColumnModel()
             {
+                Id = Guid.NewGuid(),
                 Name = name,
                 ColumnTasks = new List<TaskModel>()
             };
@@ -44,7 +89,7 @@ namespace ScrumBoardApp.Controllers.Column
                 db.AddColumn(Mapper.Map<ColumnBL>(column));
             }
 
-            return Redirect("~/Home/Success");
+            return RedirectToAction("Index", "Column");
         }
     }
 }

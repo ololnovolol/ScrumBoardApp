@@ -55,9 +55,7 @@ namespace ScrumBoardApp.Controllers.Board
         [Authorize]
         public IActionResult Details()
         {
-
-
-            return Index();
+            return RedirectToAction("Index","Column");
         }
 
         [HttpGet]

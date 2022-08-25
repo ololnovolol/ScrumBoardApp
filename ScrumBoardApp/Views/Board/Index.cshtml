@@ -43,8 +43,19 @@
 }
 else
 {
-            <div class="alert alert-warning" role="alert">
-                Ups...Boards not found...List board is empty :( 
-                    <a asp-area="" asp-controller="Board" asp-action="AddBoard" class="alert-link">Create first board.</a>
-            </div>
+
+    <div class="alert alert-warning" role="alert">
+        Ups...Boards not found...List board is empty :( 
+
+    </div>
+
+    <p>  </p>
+
+    <table>
+        <tr>
+            <a asp-action="AddBoard" asp-controller="Board" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Create first board</a>
+            or           
+            <a asp-action="Index" asp-controller="Home" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Back to Home page</a>
+        </tr>
+    </table>
 }
