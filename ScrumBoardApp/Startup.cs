@@ -79,12 +79,17 @@ namespace ScrumBoardApp
 
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<UserModel, UserBL>(MemberList.None);
-                cfg.CreateMap<UserBL, User>(MemberList.None);
+                cfg.CreateMap<UserModel, UserBL>(MemberList.Source);
+                cfg.CreateMap<UserBL, User>(MemberList.Destination);
+
                 cfg.CreateMap<BoardModel, BoardBL>(MemberList.None);
                 cfg.CreateMap<BoardBL, Board>(MemberList.None);
+
                 cfg.CreateMap<ColumnModel, ColumnBL>(MemberList.None);
                 cfg.CreateMap<ColumnBL, Column>(MemberList.None);
+
+                cfg.CreateMap<TaskModel, TaskBL>(MemberList.None);
+                cfg.CreateMap<TaskBL, Taska>(MemberList.None);
             });
         }
     }

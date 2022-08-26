@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace BLL.Models
 {
-    public class UserBL : BaseEntityBL
+    public class UserBL : IdentityUser
     {
-        public string Email { get; set; }
 
         public string Password { get; set; }
 

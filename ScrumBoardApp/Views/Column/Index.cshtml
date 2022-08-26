@@ -57,4 +57,34 @@ else
 
 }
 
-@*<a asp-area="" asp-controller="Column" asp-action="AddColumn" class="alert-link">Create first board.</a>*@
+
+@*
+    <div class="container text-center">
+    @foreach (var item in Model)
+        {
+            <div class="row">
+                @foreach (var task in item.ColumnTasks)
+                {
+
+                        <div class="col">
+                            @task.Name
+                        </div>
+
+                }
+            </div>
+        }
+    </div>*@
+
+@*<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            Column
+        </div>
+        <div class="col">
+            Column
+        </div>
+        <div class="col">
+            Column
+        </div>
+    </div>
+</div>*@

@@ -26,7 +26,7 @@ namespace BLL.Services
 
         public void UpdateUser(UserBL element)
         {
-            var toUpdate = DB.Users.Read(Id: element.Id).Result;
+            var toUpdate = DB.Users.Read(Id: Guid.Parse(element.Id)).Result;
 
             if (toUpdate != null)
             {

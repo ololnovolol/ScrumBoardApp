@@ -31,7 +31,7 @@ namespace DAL.Repositories
 
         ValueTask<User> IRepository<User>.Read(Guid Id)
         {
-            return Db.Users.FindAsync(Id);
+            return Db.Users.FindAsync(Id.ToString());
         }
 
         IEnumerable<User> IRepository<User>.ReadAll()

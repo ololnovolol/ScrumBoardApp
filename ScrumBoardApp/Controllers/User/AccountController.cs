@@ -1,10 +1,18 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using BLL.Models;
 using BLL.Services;
+using DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ScrumBoardApp.Models;
 using ScrumBoardApp.Models.Authorization;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ScrumBoardApp.Controllers.User
 {
@@ -19,6 +27,51 @@ namespace ScrumBoardApp.Controllers.User
             _signInManager = signInManager;
         }
 
+        [HttpGet]
+        [Authorize]
+        public ActionResult Settings()
+        {
+            var currentId = _userManager.GetUserId(User);
+            using (BllUserService us = new BllUserService())
+            {
+                var currentUser = Mapper.Map<UserModel>(us.GetUsers().FirstOrDefault(x => x.Id == currentId));
+                return View(currentUser);
+            }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Settings(UserModel model)
+        {
+            DAL.Entities.User user = await _userManager.GetUserAsync(User);
+            user.Email = model.Email;
+            user.Password = model.Password;
+            user.UserName = model.UserName;
+            user.BirthDay = model.BirthDay;
+    
+
+            if (ModelState.IsValid)
+            {
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+
+                    return Redirect("~/Home/Success");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+
+            }
+
+            return View(model);
+        }
+
         // GET: RegistrationController
         [HttpGet]
         public ActionResult Registration()
@@ -27,32 +80,12 @@ namespace ScrumBoardApp.Controllers.User
         }
 
         [HttpPost]
-        //public IActionResult Registration(string name, string email, string password, DateTime birthDay)
-        //{
-        //    UserModel user = new UserModel()
-        //    {
-        //        Name = name,
-        //        Email = email,
-        //        Password = password,
-        //        BirthDay = birthDay,
-        //        Role = "user",
-        //    };
-
-        //    using (var db = new BllUserService())
-        //    {
-        //        db.AddUser(Mapper.Map<UserBL>(user));
-        //    }
-
-        //    return Redirect("~/Home/Success");
-        //}
-
-        [HttpPost]
         public async Task<IActionResult> Registration(UserModel model)
         {
             if (ModelState.IsValid)
             {
 
-                DAL.Entities.User user = new DAL.Entities.User { Email = model.Email, UserName = model.Email, BirthDay = model.BirthDay };
+                DAL.Entities.User user = new DAL.Entities.User { Email = model.Email, UserName = model.UserName, BirthDay = model.BirthDay };
                 // Add Acc
                 var result = await _userManager.CreateAsync(user, model.Password);
 
@@ -68,6 +101,16 @@ namespace ScrumBoardApp.Controllers.User
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
+                }
+            }
+            else
+            {
+                DAL.Entities.User user = new DAL.Entities.User { Email = model.Email, UserName = model.UserName, BirthDay = model.BirthDay };
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
 

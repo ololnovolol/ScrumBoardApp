@@ -1,15 +1,16 @@
 ﻿@model ScrumBoardApp.Models.Authorization.UserModel
 @{
-    ViewData["Title"] = "Registration";
+    ViewData["Title"] = "Settings";
 }
 
-<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+@*<h2>Settings </h2>
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />*@
 
 <div class="row justify-content-center align-items-center" >
     <div class="col-md-4">
 
-        <h4>Register</h4>
-        <form asp-action="Registration" asp-controller="Account">
+        <h2>Settings </h2>
+        <form asp-action="Settings" asp-controller="Account">
 
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>
@@ -40,7 +41,7 @@
 
 
             <div class="form-group">
-                <input type="submit" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true" value="Register"/>
+                <input type="submit" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true" value="Change"/>
             </div>
 
 
@@ -52,3 +53,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+@*<table class="table">
+
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Confirm Password</th>
+        <th scope="col">BirthDay</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr>
+        <td>@Model.UserName</td>
+        <td>@Model.Email</td>
+        <td>@Model.Password</td>
+        <td>@Model.ConfirmPassword</td>
+        <td>@Model.BirthDay</td>
+        <td>
+            <a asp-action="Details" asp-controller="Account" class="btn btn-outline-primary" tabindex="-1" role="button" aria-disabled="true">Select</a>
+            <a asp-action="Update" asp-controller="Account" asp-route-id="@Model.Id" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Update</a>
+            <a asp-action="Delete" asp-controller="Account" asp-route-id="@Model.Id" class="btn btn-outline-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+
+    <tr><td><a asp-action="AddBoard" asp-controller="Board"  class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">Add</a></td></tr>
+</table>*@
+
+
+

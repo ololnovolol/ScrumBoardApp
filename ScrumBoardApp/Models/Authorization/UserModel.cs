@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 using ScrumBoardApp.Models;
 
 namespace ScrumBoardApp.Models.Authorization
 {
-    public class UserModel : BaseEntityModel
+    public class UserModel : IdentityUser
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -31,11 +29,6 @@ namespace ScrumBoardApp.Models.Authorization
 
         public ICollection<BoardModel> UserBoards { get; set; }
 
-        public UserModel()
-        {
-            UserBoards = new List<BoardModel>();
-            Id = Guid.NewGuid();
-        }
 
     }
 }
